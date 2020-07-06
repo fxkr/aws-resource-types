@@ -18,7 +18,7 @@ import json
 import scrapy
 
 
-class TocSpider(scrapy.Spider):
+class ResourceTypeSpider(scrapy.Spider):
     name = 'tocspider'
     start_urls = ['https://docs.aws.amazon.com/IAM/latest/UserGuide/toc-contents.json']
     download_delay = 0.250
