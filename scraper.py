@@ -37,10 +37,7 @@ class ResourceTypeSpider(scrapy.Spider):
         for page in j:
             title = page['title']
             href = page['href']
-            print(title, href)
             yield response.follow(href, self.parse_ref)
-
-            # break
 
     def parse_ref(self, response):
         service = response.xpath('//h2[starts-with(text(),"Resource Types Defined by")]/text()').get().replace("Resource Types Defined by", "").strip()
